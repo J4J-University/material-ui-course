@@ -7,7 +7,7 @@ const Button = (props: ButtonProps) => {
 	const styles = useStyles();
 	const { root } = styles;
 	return (
-		<MuiButton {...rest} sx={{ root }}>
+		<MuiButton {...rest} sx={root}>
 			{children}
 		</MuiButton>
 	);
