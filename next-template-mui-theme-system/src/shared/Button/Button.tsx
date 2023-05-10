@@ -1,10 +1,16 @@
+import ButtonProps from '@/shared/Button/Button.types';
+import useStyles from '@/shared/Button/Button.useStyles';
 import { Button as MuiButton } from '@mui/material';
-import React from 'react';
-
-interface ButtonProps extends React.ComponentProps<typeof MuiButton> {}
 
 const Button = (props: ButtonProps) => {
-	return <MuiButton {...props} />;
+	const { children, ...rest } = props;
+	const styles = useStyles();
+	const { root } = styles;
+	return (
+		<MuiButton {...rest} sx={{ root }}>
+			{children}
+		</MuiButton>
+	);
 };
 
 export default Button;
